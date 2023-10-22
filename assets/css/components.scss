@@ -1,0 +1,225 @@
+@import "vars";
+@import "wrappers";
+
+/**
+ * Component Header with badge.
+ */
+.scp-header {
+
+    display: inline-block;
+
+    // Header.
+    h1 {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-size: $fs-header-1;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    // Badge at the right.
+    span {
+        float: right;
+        margin-left: 4px;
+        border-radius: 11px;
+        padding: 5px 10px;
+        background: $bg-ui-small;
+        line-height: normal;
+        font-size: $fs-badge;
+        font-style: normal;
+        font-weight: 700;
+    }
+}
+
+/**
+ * Images.
+ */
+.scp-image {
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/**
+ * Component buttons.
+ */
+.scp-button {
+    padding: 20px 58px;
+    min-width: 290px;
+    border-radius: 3px;
+    border: 1px solid $bd-ui-btn;
+    background: $bg-ui-btn;
+}
+
+.scp-buttons {
+    display: flex;
+    width: fit-content;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+
+    .scp-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/**
+ * Grid descriptions with icon, heading, and text.
+ * 
+ * 3 columns.
+ */
+.scp-grid-descriptions {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+
+
+    .scp-grid-description {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: calc($content-width / 3 - 50px);
+
+        .scp-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: $fs-header-2;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        p {
+            text-align: center;
+            font-size: $fs-main-content;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+        }
+    }
+}
+
+/**
+ * Cards with text, author, and star rating.
+ * 
+ * STARS .testimonial-rate[data-rate="(int)"]
+ * The data-rate attribute is used to set how many stars
+ * should be shown.
+ */
+.scp-testimonial-cards {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+
+    .scp-card {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: calc($content-width / 3 - 50px);
+        box-sizing: border-box;
+
+        .scp-card-content {
+
+            border-radius: 6px;
+            border: 1px solid $bd-card;
+            padding: 30px;
+            background: $bg-card;
+
+            .content-row {
+                padding: 0px;
+            }
+
+            .testimonial-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+
+                .testimonial-author {
+                    display: flex;
+                }
+
+                .testimonial-stars {
+                    display: flex;
+
+                    .testimonial-rate {
+
+                        display: inline-block;
+                        height: $star-icon-height;
+                        width: $star-icon-height;
+                        background: url(../images/icons/star-solid.svg);
+                        background-size: $star-icon-height;
+
+                        &[data-rate="1"] {
+                            width: calc(1 * $star-icon-height);
+                        }
+                        &[data-rate="2"] {
+                            width: calc(2 * $star-icon-height);
+                        }
+                        &[data-rate="3"] {
+                            width: calc(3 * $star-icon-height);
+                        }
+                        &[data-rate="4"] {
+                            width: calc(4 * $star-icon-height);
+                        }
+                        &[data-rate="5"] {
+                            width: calc(5 * $star-icon-height);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * Helpers.
+ */
+
+// Text center.
+.scp-text-center {
+    text-align: center;
+}
+
+.scp-mb-50 {
+    margin-bottom: 50px;
+}
+
+// Vertical Spacer.
+.scp-vspace-lightest {
+    height: 15px;
+}
+.scp-vspace-lighter {
+    height: 40px;
+}
+.scp-vspace-light {
+    height: 50px;
+}
+.scp-vspace-medium {
+    height: 100px;
+}

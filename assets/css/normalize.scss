@@ -1,0 +1,25 @@
+/**
+ * Remove margins and paddings from important element.
+ */
+body, div, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+/**
+ * Remove default button styles.
+ */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}

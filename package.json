@@ -1,0 +1,15 @@
+{
+  "name": "sm-landing-page",
+  "version": "1.0.0",
+  "description": "Second challenge from Awesome Motive.",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/css/styles.scss assets/css/styles.css",
+    "watch": "sass --watch assets/css/styles.scss assets/css/styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.69.4"
+  }
+}

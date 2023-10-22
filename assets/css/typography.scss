@@ -1,0 +1,34 @@
+/**
+ * Font families.
+ */
+@font-face {
+    font-family: 'Arvo-Regular';
+    src: url("../fonts/Arvo-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url("../fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url("../fonts/HelveticaNeueBold.ttf");
+}
+
+
+/**
+ * Font sizes.
+ * 
+ * Function to multiple of 4. With this format $fs-16 = 16px, $fs-20 = 20px, etc.
+ */
+@function fs($size) {
+    @return $size * 2px;
+}
+$fs-48: fs(24);
+$fs-32: fs(16);
+$fs-24: fs(12);
+$fs-20: fs(10);
+$fs-18: fs(9);
+$fs-16: fs(8);
+$fs-10: fs(5);

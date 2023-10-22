@@ -1,0 +1,52 @@
+/**
+ * Content width.
+ */
+$content-width: 960px !default;
+$demo-video-image-height: 540px !default;
+$star-icon-height: 17px !default;
+
+
+/**
+ * Fonts.
+ */
+@import "typography";
+
+// Font families.
+$ff-main: "Lato", sans-serif !default;
+$ff-heading: "Arvo-Regular", sans-serif !default;
+$ff-ui-small: "HelveticaNeueBold", sans-serif !default;
+
+// Font sizes.
+$fs-header-1: $fs-48 !default;
+$fs-header-2: $fs-24 !default;
+$fs-main-content: $fs-16 !default;
+$fs-badge: $fs-10 !default;
+
+/**
+ * Colors.
+ */
+@import "colors";
+
+// Font colors.
+$fc-main: $medium-grey !default;
+$fc-secondary: $dark-grey !default;
+$fc-ui-small: $plain-white !default;
+
+// Background colors.
+$bg-ui-small: $light-grey !default;
+$bg-ui-btn: $plain-white !default;
+$bd-ui-btn: $medium-white !default;
+
+// Card.
+$bg-card: $plain-white !default;
+$bd-card: $medium-white !default;
+
+// Section 1.
+$bg-section-1: $light-white !default;
+
+// Section 2.
+$bg-section-2a: $light-white !default;
+$bg-section-2b: $plain-white !default;
+
+// Section 3.
+$bg-section-3: $light-white !default;

@@ -1,0 +1,45 @@
+@import "vars";
+
+@mixin content-width {
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+/**
+ * Content wrapper.
+ */
+.content-wrapper > * {
+    @include content-width;
+}
+
+/**
+ * Content width class.
+ */
+.content-width {
+    @include content-width;
+}
+
+/**
+ * Row inside content wrapper.
+ */
+.content-row {
+    display: block;
+    padding: 0 20px;
+}
+
+/**
+ * Content cols wrapper named .content-cols with content col named .content-col.
+ */
+.content-cols {
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+
+    .content-col {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
