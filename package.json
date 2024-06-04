@@ -2,14 +2,35 @@
   "name": "sm-landing-page",
   "version": "1.0.0",
   "description": "Second challenge from Awesome Motive.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "sass assets/css/styles.scss assets/css/styles.css",
-    "watch": "sass --watch assets/css/styles.scss assets/css/styles.css"
+    "start": "node index.js",
+    "dev": "npm run build && npm-run-all --parallel start watch",
+    "build": "npm-run-all build:js build:images build:sass build:static",
+    "build:js": "babel app/assets/js --out-dir dist/assets/js --minified --source-maps",
+    "build:images": "node build-images.js",
+    "build:sass": "sass app/assets/scss/styles.scss dist/assets/css/styles.css --style compressed",
+    "build:static": "node build-static.js",
+    "watch": "npm-run-all --parallel watch:js watch:images watch:sass watch:static",
+    "watch:js": "chokidar 'app/assets/js/**/*.js' -c 'npm run build:js'", 
+    "watch:images": "chokidar 'app/assets/images/**/*.{jpg,png,svg}' -c 'npm run build:images'",
+    "watch:sass": "sass --watch app/assets/scss/styles.scss:dist/assets/css/styles.css",
+    "watch:static": "chokidar 'app/**/*.html' 'app/assets/fonts/**/*' -c 'npm run build:static'"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "chokidar-cli": "^3.0.0",
+    "copyfiles": "^2.4.1",
+    "fs-extra": "^11.2.0",
+    "imagemin": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
+    "ip": "^2.0.1",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.69.4"
   }
 }

@@ -1,0 +1,222 @@
+/**
+ * Colors
+ */
+@import "vars";
+
+/**
+ * Normalize styles.
+ */
+@import "normalize";
+
+/**
+ * Overrides styles.
+ */
+@import "overrides";
+
+/**
+ * Components styles.
+ */
+@import "components";
+
+/**
+ * Layout styles.
+ */
+#content {
+
+    font-family: $ff-main;
+    color: $fc-main;
+
+    // Headings.
+    h1 {
+        color: $fc-secondary;
+    }
+
+    // Text contents.
+    p {
+        font-size: $fs-main-content;
+        // Disable line breaks on touch devices.
+        @media (pointer:coarse) {
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    // Section 1.
+    #section-1 {
+
+        // Content wrapper nth1.
+        .content-wrapper:nth-child(1) {
+
+            // Half of the demo video image height.
+            padding-bottom: calc($demo-video-image-height / 2);
+            background: $bg-section-1;
+
+            // Main Header.
+            .scp-header {
+
+                h1 {
+                    font-family: $ff-heading;
+                }
+
+                span {
+                    font-family: $ff-ui-small;
+                    color: $plain-white;
+                }
+            }
+
+            // Section 1 content 1 text.
+            .scp-text {
+                line-height: 28px;
+
+                p {
+                    font-size: $fs-section-1-1;
+                }
+            }
+
+            .scp-buttons {
+                margin: 0 auto;
+
+                .scp-button {
+                    background-color: $bg-section-1-btn-1;
+                    color: $fc-section-1-btn-1;
+
+                    &:hover {
+                        background-color: $bg-section-1-btn-2;
+                        color: $fc-section-1-btn-2;
+                    }
+                }
+
+                @media ( max-width: $bp-tablet ) {
+                    & {
+                        gap: 20px;
+                    }
+                }
+            }
+
+            @media ( max-width: $bp-responsive ) {
+                padding-bottom: 0px;
+            }
+        }
+
+        // Content wrapper nth2.
+        .content-wrapper:nth-child(2) {
+
+            position: relative;
+
+            // Minus half of the demo video image height.
+            margin-top: calc(-1 * $demo-video-image-height / 2);
+            margin-bottom: calc(-1 * $demo-video-image-height / 2);
+
+            .scp-image {
+                border-radius: 6px;
+                box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15); 
+                background: #FFF;
+            }
+
+            @media ( max-width: $bp-responsive ) {
+                margin-top: 40px;
+                margin-bottom: 0px;
+            }
+        }
+
+        // Content wrapper nth3.
+        .content-wrapper:nth-child(3) {
+
+            // Half of the demo video image height.
+            padding-top: calc($demo-video-image-height / 2);
+
+            .scp-grid-description {
+
+                h3 {
+                    color: $fc-secondary;
+                }
+            }
+
+            @media ( max-width: $bp-responsive ) {
+                padding-top: 0px;
+            }
+        }
+    }
+
+    // Section 2.
+    #section-2 {
+
+        background: linear-gradient(180deg, $bg-section-2a 0%, $bg-section-2b 100%);
+
+        .scp-buttons {
+            margin: 0 auto;
+
+            .scp-button {
+                background-color: $bg-section-2-btn-1;
+                color: $fc-section-2-btn-1;
+
+                &:hover {
+                    background-color: $bg-section-2-btn-2;
+                    color: $fc-section-2-btn-2;
+                }
+            }
+
+            @media ( max-width: $bp-tablet ) {
+                & {
+                    gap: 20px;
+                }
+            }
+        }
+    }
+
+    // Section 3.
+    #section-3 {
+
+        background: $bg-section-3;
+
+        h2 {
+            color: $dark-grey;
+            font-family: $ff-ui-medium;
+            font-size: $fs-32;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        @media ( max-width: $bp-responsive ) {
+        }
+    }
+
+    // Section 4.
+    #section-4 {
+
+        background: $plain-white;
+
+        h2 {
+            color: $dark-grey;
+            font-family: $ff-ui-medium;
+            font-size: $fs-24;
+            font-weight: 700;
+            line-height: $fs-32;
+        }
+
+        @media ( max-width: $bp-responsive ) {
+        }
+    }
+
+    @media ( max-width: $bp-tablet ) {
+        p {
+            line-height: 24px;
+        }
+
+        p br {
+            display: none;
+        }
+    }
+
+    @media ( max-width: $bp-mobile ) {
+        .content-cols {
+            flex-direction: column;
+
+            h2 {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

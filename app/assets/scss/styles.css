@@ -28,6 +28,22 @@ button {
 }
 
 /**
+ * Default Links
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/**
+ * Default paragraph styles.
+ */
+p {
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+/**
  * Overrides styles.
  */
 /**
@@ -47,7 +63,11 @@ button {
   src: url("../fonts/Arvo-Regular.ttf");
 }
 @font-face {
-  font-family: "Lato";
+  font-family: "Lato-Light";
+  src: url("../fonts/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato-Regular";
   src: url("../fonts/Lato-Regular.ttf");
 }
 @font-face {
@@ -61,6 +81,9 @@ button {
  */
 /**
  * Colors.
+ */
+/**
+ * Device breakpoints.
  */
 /**
  * Components styles.
@@ -79,7 +102,11 @@ button {
   src: url("../fonts/Arvo-Regular.ttf");
 }
 @font-face {
-  font-family: "Lato";
+  font-family: "Lato-Light";
+  src: url("../fonts/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato-Regular";
   src: url("../fonts/Lato-Regular.ttf");
 }
 @font-face {
@@ -93,6 +120,9 @@ button {
  */
 /**
  * Colors.
+ */
+/**
+ * Device breakpoints.
  */
 /**
  * Content width.
@@ -108,7 +138,11 @@ button {
   src: url("../fonts/Arvo-Regular.ttf");
 }
 @font-face {
-  font-family: "Lato";
+  font-family: "Lato-Light";
+  src: url("../fonts/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato-Regular";
   src: url("../fonts/Lato-Regular.ttf");
 }
 @font-face {
@@ -122,6 +156,9 @@ button {
  */
 /**
  * Colors.
+ */
+/**
+ * Device breakpoints.
  */
 /**
  * Content wrapper.
@@ -182,7 +219,7 @@ button {
   margin-left: 4px;
   border-radius: 11px;
   padding: 5px 10px;
-  background: #ffb305;
+  background: #BBB;
   line-height: normal;
   font-size: 10px;
   font-style: normal;
@@ -192,10 +229,35 @@ button {
 /**
  * Images.
  */
+.scp-image {
+  position: relative;
+}
 .scp-image img {
   display: block;
   width: 100%;
   height: auto;
+}
+.scp-image.video-player {
+  cursor: pointer;
+}
+.scp-image.video-player::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/play-button.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 12%;
+  transition: all 0.5s ease-out allow-discrete;
+  transition: 200ms linear 50ms;
+}
+.scp-image.video-player:hover::after {
+  background-size: 16%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /**
@@ -207,6 +269,7 @@ button {
   border-radius: 3px;
   border: 1px solid #ddd;
   background: #fff;
+  font-family: "Lato-Regular", sans-serif;
 }
 
 .scp-buttons {
@@ -241,6 +304,7 @@ button {
   align-items: center;
   gap: 20px;
   width: 270px;
+  position: relative;
 }
 .scp-grid-descriptions .scp-grid-description .scp-icon {
   display: flex;
@@ -261,8 +325,39 @@ button {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
   text-align: center;
+}
+.scp-grid-descriptions .scp-grid-description:nth-child(3n):not(:last-child):after {
+  content: "";
+  width: calc(300% + 100px);
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+}
+.scp-grid-descriptions .scp-grid-description:not(:nth-child(3n))::after {
+  content: "";
+  width: 1px;
+  height: calc(100% + 25px);
+  background-color: #ddd;
+  position: absolute;
+  top: 0px;
+  right: -25px;
+}
+.scp-grid-descriptions .scp-grid-description:nth-child(n+3):not(:nth-child(3n)):after {
+  top: -25px;
+  height: calc(100% + 50px);
+}
+@media (max-width: 964px) {
+  .scp-grid-descriptions .scp-grid-description:after {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .scp-grid-descriptions .scp-grid-description:after {
+    display: none;
+  }
 }
 
 /**
@@ -336,6 +431,10 @@ button {
   text-align: center;
 }
 
+.scp-text-bold {
+  font-weight: 700;
+}
+
 .scp-mb-50 {
   margin-bottom: 50px;
 }
@@ -360,7 +459,7 @@ button {
  * Layout styles.
  */
 #content {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato-Light", sans-serif;
   color: #777;
 }
 #content h1 {
@@ -385,8 +484,32 @@ button {
   font-family: "HelveticaNeueBold", sans-serif;
   color: #fff;
 }
+#content #section-1 .content-wrapper:nth-child(1) .scp-text {
+  line-height: 28px;
+}
+#content #section-1 .content-wrapper:nth-child(1) .scp-text p {
+  font-size: 20px;
+}
 #content #section-1 .content-wrapper:nth-child(1) .scp-buttons {
   margin: 0 auto;
+}
+#content #section-1 .content-wrapper:nth-child(1) .scp-buttons .scp-button {
+  background-color: #fff;
+  color: #777;
+}
+#content #section-1 .content-wrapper:nth-child(1) .scp-buttons .scp-button:hover {
+  background-color: #E27730;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  #content #section-1 .content-wrapper:nth-child(1) .scp-buttons {
+    gap: 20px;
+  }
+}
+@media (max-width: 964px) {
+  #content #section-1 .content-wrapper:nth-child(1) {
+    padding-bottom: 0px;
+  }
 }
 #content #section-1 .content-wrapper:nth-child(2) {
   position: relative;
@@ -398,11 +521,22 @@ button {
   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.15);
   background: #FFF;
 }
+@media (max-width: 964px) {
+  #content #section-1 .content-wrapper:nth-child(2) {
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+}
 #content #section-1 .content-wrapper:nth-child(3) {
   padding-top: 270px;
 }
 #content #section-1 .content-wrapper:nth-child(3) .scp-grid-description h3 {
   color: #444;
+}
+@media (max-width: 964px) {
+  #content #section-1 .content-wrapper:nth-child(3) {
+    padding-top: 0px;
+  }
 }
 #content #section-2 {
   background: linear-gradient(180deg, #f8f8f8 0%, #fff 100%);
@@ -412,6 +546,22 @@ button {
 }
 #content #section-3 {
   background: #f8f8f8;
+}
+@media (max-width: 768px) {
+  #content p {
+    line-height: 24px;
+  }
+  #content p br {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #content .content-cols {
+    flex-direction: column;
+  }
+  #content .content-cols h2 {
+    margin-bottom: 40px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

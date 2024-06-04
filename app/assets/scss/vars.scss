@@ -5,16 +5,16 @@ $content-width: 960px !default;
 $demo-video-image-height: 540px !default;
 $star-icon-height: 17px !default;
 
-
 /**
  * Fonts.
  */
 @import "typography";
 
 // Font families.
-$ff-main: "Lato", sans-serif !default;
+$ff-main: "Lato-Light", sans-serif !default;
 $ff-heading: "Arvo-Regular", sans-serif !default;
 $ff-ui-small: "HelveticaNeueBold", sans-serif !default;
+$ff-ui-medium: "Lato-Regular", sans-serif !default;
 
 // Font sizes.
 $fs-header-1: $fs-48 !default;
@@ -43,10 +43,27 @@ $bd-card: $medium-white !default;
 
 // Section 1.
 $bg-section-1: $light-white !default;
+$fs-section-1-1: $fs-20 !default;
+$fc-section-1-btn-1: $medium-grey !default;
+$bg-section-1-btn-1: $plain-white !default;
+$fc-section-1-btn-2: $plain-white !default;
+$bg-section-1-btn-2: $orange !default;
 
 // Section 2.
 $bg-section-2a: $light-white !default;
 $bg-section-2b: $plain-white !default;
+$fc-section-2-btn-1: $medium-grey !default;
+$bg-section-2-btn-1: $plain-white !default;
+$fc-section-2-btn-2: $plain-white !default;
+$bg-section-2-btn-2: $orange !default;
 
 // Section 3.
 $bg-section-3: $light-white !default;
+
+/**
+ * Device breakpoints.
+ */
+$bp-mobile: 480px !default;
+$bp-tablet: 768px !default;
+$bp-responsive: 964px !default;
+$bp-desktop: 1024px !default;

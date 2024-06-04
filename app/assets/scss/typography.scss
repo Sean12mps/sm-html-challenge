@@ -7,7 +7,12 @@
 }
 
 @font-face {
-    font-family: 'Lato';
+    font-family: 'Lato-Light';
+    src: url("../fonts/Lato-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
     src: url("../fonts/Lato-Regular.ttf");
 }
 
@@ -26,6 +31,7 @@
     @return $size * 2px;
 }
 $fs-48: fs(24);
+$fs-36: fs(18);
 $fs-32: fs(16);
 $fs-24: fs(12);
 $fs-20: fs(10);
